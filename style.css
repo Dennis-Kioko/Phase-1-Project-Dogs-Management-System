@@ -1,0 +1,64 @@
+/* Reset to remove default margins and paddings */
+body, h1, h2, ul {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: cursive;
+  background-color: ghostwhite;
+}
+
+.container {
+  width: 90%;
+  margin: 15px auto;
+  padding: 20px;
+  background-color: beige;
+  border-radius: 30px;
+}
+
+h1 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+#addDogForm {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+input,
+select,
+textarea,
+button {
+  margin: 10px;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 20;
+  margin-bottom: 20;
+}
+
+.dog-card img {
+  max-width: 50%;
+  height: auto;
+  border-radius: 7px;
+  margin-bottom: 10px;
+}
+
+.edit-form input,
+.edit-form textarea,
+.edit-form button {
+  margin-bottom: 10px;
+}

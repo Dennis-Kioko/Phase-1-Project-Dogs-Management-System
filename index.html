@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dogs Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Container for the application -->
+    <div class="container">
+        <!-- Heading of the application -->
+        <h1>Dogs Management System</h1>
+
+        <!-- Form for adding new dogs -->
+        <form id="addDogForm">
+            <label for="dogName">Name:</label>
+            <input type="text" id="dogName" required>
+
+            <label for="dogBreed">Breed:</label>
+            <select id="dogBreed" required></select>
+
+            <label for="dogDescription">Description:</label>
+            <input type="text" id="dogDescription" required>
+
+            <label for="dogQuantity">Quantity:</label>
+            <input type="number" id="dogQuantity" required>
+
+            <!-- Button to add a new dog -->
+            <button type="submit">Add Dog</button>
+        </form>
+
+        <!-- List of dogs -->
+        <div id="dogList">
+            <h2>List of Dogs</h2>
+            <!-- Dogs will be added here -->
+            <ul id="dogs"></ul>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
