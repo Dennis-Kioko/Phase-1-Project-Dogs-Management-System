@@ -55,8 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function deleteDog(dogCard, dogData) {
-    const dogList = document.getElementById("dogs");
-    dogList.removeChild(dogCard);
+    dogCard.remove();
 
     // Remove the dog from the local storage
     dogsData = dogsData.filter(dog => dog !== dogData);
@@ -78,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <input type="text" id="editDogDescription" value="${dogData.description}" required>
 
         <label for="editDogQuantity">Quantity:</label>
-        <input type="text" id="editDogQuantity" value="${dogData.quantity}" required>
+        <input type="number" id="editDogQuantity" value="${dogData.quantity}" required>
 
         <button type="submit">Save Changes</button>
     `;
@@ -152,14 +151,15 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Fetch data from the dog API
-async function fetchDogData(apiUrl) {
-  try {
-    const res = await fetch(apiUrl);
-    if (!res.ok) {
-      throw new Error("Failed to fetch");
-    }
-    return await res.json();
-  } catch (error) {
-    console.error("Error fetching dog data", error);
-  }
+function fetchDogData(apiUrl) {
+  return fetch(apiUrl)
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error("Failed to fetch");
+      }
+      return res.json();
+    })
+    .catch((error) => {
+      console.error("Error fetching dog data", error);
+    });
 }
